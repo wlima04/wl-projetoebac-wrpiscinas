@@ -7,11 +7,18 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.container-principal {
-    max-width: 640px;
+/* Layout Mobile */
+
+main {
+    min-width: 375px;
+}
+
+section {
+    /* max-width: 640px; */
     min-width: 375px;
     width: 100%;
     margin: 0 auto;
+    padding: 40px;
 }
 
 /* Cabeçalho */
@@ -20,9 +27,13 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     color: white;
     background-color: #002A42;
+}
+
+header h1 {
+    width: 150px;
 }
 
 header li {
@@ -34,23 +45,18 @@ header li a {
     text-decoration: none;
 }
 
-main {
-    min-width: 375px;
-}
-
 /* Conteúdo Sobre a loja */
 
-#sobre-a-loja {
-    margin: 30px;
-    padding-top: 15px;
-}
-
-#sobre-a-loja h2 {
+#sobre-a-loja div > h2 {
     font-style: italic;
     color: #002A42;
-    margin: 30px 0;
+    margin: 40px 0;
     padding-bottom: 15px;
     border-bottom: 3px solid #002A42;
+}
+
+#sobre-a-loja img {
+    width: 100%;
 }
 
 
@@ -58,11 +64,12 @@ main {
 
 
 #produtos {
-    margin: 30px;
+    width: 100%;
+    margin-right: 40px;
     padding-top: 10px;
 }
 
-#produtos h2 {
+#produtos > h2 {
     font-style: italic;
     color: #002A42;
     margin: 30px 0;
@@ -70,16 +77,22 @@ main {
     border-bottom: 3px solid #002A42;
 }
 
+.lista-produtos li {
+    list-style: none;
+}
+
 .produto {
     margin-top: 40px;
 }
 
 .produto img {
+    width: 100%;
     margin-bottom: 15px;
 }
 
 .produto p {
-    margin: 15px 0;
+    /* height: 100%; */
+    margin: 15px 0px 30px;
 }
 
 #btn-carrinho {
@@ -91,6 +104,66 @@ main {
     border-radius: 10px;
 }
 
-#btn-carrinho:hover {
-    opacity: 0.9;
+/* Layout Tablet */
+
+@media screen and (min-width: 641px) {
+    
+    section {
+        max-width: 1023px;
+        margin-top: 40px;
+    }
+
+    /* Cabeçalho */
+
+    header h1 {
+        width: 300px;
+    }    
+    
+    header ul {
+        display: flex;
+        gap: 30px;
+    }
+
+    /* Conteúdo Sobre a loja */
+
+    #sobre-a-loja img {
+        width: 100%;
+    }
+
+    /* Conteúdo Produtos */
+
+    .lista-produtos {
+        display: grid;
+        grid-template-columns: repeat(2, 47%);
+        column-gap: 3%;
+        row-gap: 5%;
+    }
+
+    .lista-produtos li {
+        list-style: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    section {
+        max-width: 1366px;
+        padding: 0px 40px;
+    }
+
+    /* Conteudo Sobre a loja */
+
+    #sobre-a-loja {
+        display: flex;
+        gap: 50px;
+    }
+
+    /* Conteúdo Produtos */
+
+    .lista-produtos {
+        grid-template-columns: repeat(4,22.5%);
+    }
+
+    .produto img {
+        width: 100%;
+    }
 }
