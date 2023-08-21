@@ -93,8 +93,9 @@ header li a {
 }
 
 .produto p {
-    margin: 15px 0px 30px;
-    max-width: 300px;
+    margin: 15px 0px 40px;
+    max-height: 90px;
+    height: 100%;
 }
 
 #btn-carrinho {
